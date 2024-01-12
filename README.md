@@ -1,4 +1,4 @@
-# morse-trainer
+# morse-train
 A simple morse code trainer for people who are poggers
 
 heavily wip
