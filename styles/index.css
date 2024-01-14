@@ -16,19 +16,31 @@ h1 {
   font-family: 'Playfair Display', serif;
   font-size: 7vw;
   letter-spacing: 4px;
-  box-sizing: border-box;
+  box-sizing: content-box;
   border-bottom: 3px solid transparent;
-  padding-bottom: 0px;
-  margin-bottom: 0px;
+  cursor: pointer;
 }
 
+/*
 #encode:hover h1,
 #decode:hover h1 {
   border-bottom-color: currentColor;
 }
+*/
+
+h1:hover {
+  border-bottom-color: currentColor;
+}
+
+#encode {
+  background-color: #e0e0e0;
+}
+
+#decode {
+  background-color: #fefefe;
+}
 
 #encode, #decode {
-    cursor: pointer;
     width: 50%;
     height: 100vh;
     box-sizing: border-box;
@@ -36,5 +48,4 @@ h1 {
     flex-direction: column;
     justify-content: center; /* Vertically center content */
     align-items: center; /* Horizontally center content */
-    background-color: #aaa;
 }
