@@ -1,0 +1,48 @@
+Some work from my unpaid robotic colleague. he works at some kind of open foundation i forget
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .left-section, .right-section {
+            width: 50%;
+            height: 100vh;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Vertically center content */
+            align-items: center; /* Horizontally center content */
+        }
+
+        .left-section {
+            background-color: #f0f0f0; /* Left section background color */
+        }
+
+        .right-section {
+            background-color: #e0e0e0; /* Right section background color */
+        }
+    </style>
+    <title>Your Website</title>
+</head>
+<body>
+    <div class="left-section">
+        <!-- Content for the left section goes here -->
+        <h2>Left Section</h2>
+        <p>This is the left side of your website.</p>
+    </div>
+    <div class="right-section">
+        <!-- Content for the right section goes here -->
+        <h2>Right Section</h2>
+        <p>This is the right side of your website.</p>
+    </div>
+</body>
+</html>
