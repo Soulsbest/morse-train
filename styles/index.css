@@ -21,19 +21,12 @@ h1 {
   cursor: pointer;
 }
 
-/*
-#encode:hover h1,
-#decode:hover h1 {
-  border-bottom-color: currentColor;
-}
-*/
-
 h1:hover {
   border-bottom-color: currentColor;
 }
 
 #encode {
-  background-color: #e0e0e0;
+  background-color: #d31a1a;
 }
 
 #decode {
