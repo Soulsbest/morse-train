@@ -1,9 +1,37 @@
-.start_box {
-  background-color: #fff;
-  border: 1px solid #e6e6e6;
-  border-radius: 4px;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
-  margin: 20px 0;
-  max-width: 100%;
-  padding: 20px;
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+h1 {
+  color: #333;
+  font-family: 'Playfair Display', serif;
+  font-size: 7vw;
+  font-weight: 600;
+  letter-spacing: 4px;
+  box-sizing: border-box;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+#encode:hover h1,
+#decode:hover h1 {
+  border-bottom-color: currentColor;
+}
+
+#encode, #decode {
+    width: 50%;
+    height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center content */
+    align-items: center; /* Horizontally center content */
+    background-color: #aaa;
 }
