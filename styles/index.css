@@ -12,7 +12,8 @@ a {
 }
 
 h1 {
-  color: #333;
+  color: #222;
+  /* ^^^ I'm split on whether this should be #333 or #222 */
   font-family: 'Playfair Display', serif;
   font-size: 7vw;
   letter-spacing: 4px;
