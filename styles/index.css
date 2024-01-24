@@ -14,12 +14,11 @@ h1 {
   font-size: 7vw;
   font-weight: normal;
   box-sizing: content-box;
-  border-bottom: 3px solid transparent;
   cursor: pointer;
 }
 
 h1:hover {
-  border-bottom-color: currentColor;
+  text-decoration: underline;
 }
 
 #encode {
