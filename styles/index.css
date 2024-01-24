@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
 
 body {
     margin: 0;
@@ -7,16 +7,12 @@ body {
     justify-content: space-evenly;
 }
 
-a {
-  text-decoration: none;
-}
-
 h1 {
   color: #222;
   /* ^^^ I'm split on whether this should be #333 or #222 */
-  font-family: 'Playfair Display', serif;
+  font-family: 'Crimson Text', serif;
   font-size: 7vw;
-  letter-spacing: 4px;
+  font-weight: normal;
   box-sizing: content-box;
   border-bottom: 3px solid transparent;
   cursor: pointer;
