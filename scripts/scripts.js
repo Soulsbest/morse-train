@@ -1,11 +1,11 @@
 import { letters, words, sentences, letter_to_morse, morse_to_letter } from './constants.js';
 
 function toEncode() {
-    window.location.href = "encode.html";
+  window.location.href = "./encode.html";
 }
 
 function toDecode() {
-    window.location.href = "decode.html";
+  window.location.href = "decode.html";
 }
 
 function toTitle() {
