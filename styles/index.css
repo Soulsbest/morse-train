@@ -8,17 +8,20 @@ body {
 }
 
 h1 {
-  color: #222;
+  color: #333;
   /* ^^^ I'm split on whether this should be #333 or #222 */
   font-family: 'Crimson Text', serif;
   font-size: 7vw;
   font-weight: normal;
-  box-sizing: content-box;
   cursor: pointer;
+  box-sizing: content-box;
+  user-select: none;
+  border-bottom: 10px solid transparent;
 }
 
 h1:hover {
-  text-decoration: underline;
+  text-decoration:underline;
+  text-decoration-thickness: 5px;
 }
 
 #encode {
