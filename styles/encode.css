@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
 
+:root {
+  --button-width: 200px;
+  --button-height: 50px;
+}
 
 body {
   font-family: 'Crimson Text', serif;
@@ -27,10 +31,12 @@ button {
   padding: 0;
 }
 
-#inputButtons {
-  width: var(button-width);
+#inputButtons button{
+  width: var(--button-width);
+  height: var(--button-height);
 }
 
 #nextButton {
-  width: calc(var(button-width)*2);
+  width: calc(var(--button-width)*2);
+  height: var(--button-height);
 }
