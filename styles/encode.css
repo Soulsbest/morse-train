@@ -3,13 +3,11 @@
 :root {
   --button-width: 200px;
   --button-height: 50px;
+  --button-side-margin: 15px;
+  --button-bonus: 10px;
 }
 
 body {
-  font-family: 'Crimson Text', serif;
-}
-
-button {
   font-family: 'Crimson Text', serif;
 }
 
@@ -23,7 +21,7 @@ button {
   align-items: center;
 }
 
-#problemArea h1 {
+h1 {
   letter-spacing: 0.05em;
   font-size: 7vw;
   font-weight: normal;
@@ -31,12 +29,40 @@ button {
   padding: 0;
 }
 
+#problem {
+  position: fixed;
+  display: flex;
+  width: 100%;
+  height: 85%;
+  justify-content: center;
+  align-items: center;
+}
+
+#buttons {
+  position: fixed;
+  top: 63%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+button {
+  margin: 5px var(--button-side-margin);
+  font-family: 'Crimson Text', serif;
+  font-size: 2em;
+}
+
 #inputButtons button{
-  width: var(--button-width);
+  width: calc(var(--button-width) - var(--button-bonus));
   height: var(--button-height);
 }
 
+#inputButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 #nextButton {
-  width: calc(var(--button-width)*2);
+  width: calc(2*(var(--button-width) + var(--button-side-margin)));
   height: var(--button-height);
 }
