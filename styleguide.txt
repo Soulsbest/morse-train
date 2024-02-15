@@ -1,0 +1,8 @@
+Dark
+  color: #333;
+
+Light Background
+  background-color: #fefefe;
+
+Mid Background
+  background-color: #e0e0e0;

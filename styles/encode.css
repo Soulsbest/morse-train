@@ -9,6 +9,7 @@
 
 body {
   font-family: 'Crimson Text', serif;
+  background-color: #fefefe;
 }
 
 #problemArea {
@@ -27,6 +28,7 @@ h1 {
   font-weight: normal;
   margin: 0;
   padding: 0;
+  color: #333;
 }
 
 #problem {
