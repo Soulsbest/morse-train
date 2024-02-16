@@ -1,4 +1,4 @@
-import { letters, words, sentences, letter_to_morse, morse_to_letter } from '/scripts/constants.js';
+import { letters, words, sentences, letter_to_morse, morse_to_letter } from './constants.js';
 
 function chooseRandom(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
@@ -13,7 +13,7 @@ function newProblem(type) {
     case "sentence":
       return chooseRandom(sentences);
     default:
-      return "Error generating problem text: type of problem requested incorrect";
+      return "Error: problem type not recognized";
   }
 }
 

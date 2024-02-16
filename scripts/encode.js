@@ -1,10 +1,20 @@
-import {newProblem} from '/scripts/utility.js'
+import {newProblem} from './utility.js'
 
-let type = 'word'
+// This is to setup the webpage
+let type = 'letter'
 nextProblem(type)
 
-function nextProblem(type='letter') {
-  document.getElementById('problem').innerHTML = newProblem(type)
+function nextProblem() {
+    document.getElementById('problem').innerHTML = newProblem(type)
 }
+
+function setType(newType) {
+    type = newType;
+}
+
+function getType() {
+    return type;
+}
+
 
 window.nextProblem = nextProblem;

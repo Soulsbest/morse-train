@@ -1,5 +1,0 @@
-CurrentlY i'm working on designing encode, step one is just to make a letter that changes every time a button is pushed
-
-I have been working on the design of the website in terms of backend. There is now a constants file which will contain all of the hard data so that it can be managed in one location. the scripts.js will contain utilites that are useful everywhere and mutual funcitonality. additionally, each page can have a scripts file to manage its specific funcitons involving mutating its content
-
-It is very possible that ultimately everythign will be in scripts.js, and encode/decode will just be a variable. For now, I think.
