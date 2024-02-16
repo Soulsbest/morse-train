@@ -11,21 +11,23 @@
 
 <body>
 
+  <p id="winCounter">0</p>
 
   <div id="problemSpace">
 
-      <h1 id="answer">•-</h1>
-
+    <div id="guessSpace">
+      <p id="guess"></p>
       <h1 id="problem">-</h1>
+    </div>
 
     <div id="buttons">
 
       <div id="inputButtons">
-        <button>.</button>
-        <button>-</button>
+        <button onClick="handleInput('•')">•</button>
+        <button onClick="handleInput('-')">-</button>
       </div>
 
-      <button onClick="nextProblem()" id="nextButton">Next Problem</button>
+      <button onClick="handleNextProblem()" id="nextButton">Next Problem</button>
 
     </div>
 

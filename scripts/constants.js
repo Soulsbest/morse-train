@@ -32,6 +32,11 @@ for (let key in letter_to_morse) {
   morse_to_letter[letter_to_morse[key]] = key;
 };
 
+const toggle_morse = {
+  ...letter_to_morse,
+  ...morse_to_letter
+};
+
 const letters = [
   "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S",
   "T", "U", "V", "W", "X", "Y", "Z"
@@ -46,4 +51,4 @@ const sentences = [
   "this is my other sentence );"
 ];
 
-export {letter_to_morse, morse_to_letter, letters, words, sentences};
+export {letter_to_morse, morse_to_letter, toggle_morse, letters, words, sentences};

@@ -8,6 +8,17 @@ html, body {
   width: 100%;
   margin: 0;
   padding: 0;
+  user-select: none;
+}
+
+#winCounter {
+  position: fixed;
+  font-size: 40px;
+  left: 50%;
+  top: 20px;
+  margin: 0;
+  padding: 0;
+  transform: translateX(-50%);
 }
 
 #problemSpace {
@@ -19,12 +30,27 @@ html, body {
   justify-content: center;
 }
 
-#answer {
+/* This moves everything up a little bit */
+#problemSpace :not(div) {
   position: relative;
-  font-weight: normal;
-  font-size: 2em;
-  max-width: fit-content;
-  translate: -2px 0;
+  bottom: 60px;
+}
+
+#guess {
+  position: relative;
+  font-size: 6em;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  min-height: 2em;
+  top: 0.65em;
+}
+
+#guessSpace {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
 }
 
 #problem {
@@ -46,6 +72,7 @@ button {
   margin: 5px 15px;
   font-family: 'Crimson Text', serif;
   font-size: 2em;
+  user-select: none;
 }
 
 #inputButtons {
