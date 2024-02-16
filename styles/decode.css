@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
+
+html,
+body {
+    font-family: 'Crimson Text', serif;
+    background-color: #fefefe;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#returnButton {
+    position: fixed;
+    cursor: pointer;
+    top: 30px;
+    left: 20px;
+    stroke: #333;
+    transition: all 0.1s ease;
+  }
+  
+  #returnButton:hover {
+    stroke: #e0e0e0;
+  }
+  
+  #returnButton:active {
+    stroke: #333;
+  }
+  
+
+div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
