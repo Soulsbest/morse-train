@@ -5,17 +5,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./styles/encode.css">
-  <script defer type="module" src="./scripts/utility.js"></script>
   <title>Morse Train - Practice</title>
+  <script defer type="module" src="./scripts/encode.js"></script>
 </head>
 
 <body>
+
 
   <div id="problemSpace">
 
       <h1 id="answer">•-</h1>
 
-      <h1 id="problem">B</h1>
+      <h1 id="problem">-</h1>
 
     <div id="buttons">
 
@@ -24,16 +25,11 @@
         <button>-</button>
       </div>
 
-      <button id="nextButton">Next Problem</button>
+      <button onClick="nextProblem()" id="nextButton">Next Problem</button>
 
     </div>
 
   </div>
-
-  <script>
-    const prob = document.getElementById('problem')
-    prob.innerHTML = "B"
-  </script>
 
 </body>
 

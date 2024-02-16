@@ -1,4 +1,4 @@
-import { letters, words, sentences, letter_to_morse, morse_to_letter } from './scripts/constants.js';
+import { letters, words, sentences, letter_to_morse, morse_to_letter } from '/scripts/constants.js';
 
 function chooseRandom(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
@@ -24,3 +24,5 @@ function decode(char) {
 function encode(char) {
   return morse_to_letter[char];
 }
+
+export { newProblem, decode, encode };
