@@ -17,11 +17,17 @@ h1 {
   box-sizing: content-box;
   user-select: none;
   border-bottom: 10px solid transparent;
+  transition: all 0.1s ease;
 }
 
 h1:hover {
   text-decoration:underline;
   text-decoration-thickness: 5px;
+  text-shadow: currentColor 0 0 170px;
+}
+
+h1:active {
+  transform: scale(0.95);
 }
 
 #encode {

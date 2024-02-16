@@ -21,10 +21,12 @@ body {
   
   #returnButton:hover {
     stroke: #e0e0e0;
+    transform: scale(90%);
   }
   
   #returnButton:active {
     stroke: #333;
+    transform: scale(100%);
   }
   
 
