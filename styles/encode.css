@@ -11,9 +11,25 @@ html, body {
   user-select: none;
 }
 
+#returnButton {
+  position: fixed;
+  cursor: pointer;
+  top: 30px;
+  left: 20px;
+  stroke: #333;
+}
+
+#returnButton:hover {
+  stroke: #e0e0e0;
+}
+
+#returnButton:active {
+  stroke: #333;
+}
+
 #winCounter {
   position: fixed;
-  font-size: 40px;
+  font-size: 60px;
   left: 50%;
   top: 20px;
   margin: 0;
@@ -73,17 +89,29 @@ button {
   font-family: 'Crimson Text', serif;
   font-size: 2em;
   user-select: none;
+  background-color: #fff;
+  border: none;
+  box-shadow: #e0e0e0 0px 0px 10px;
+}
+
+button:hover {
+  background-color: #d0d0d0;
+}
+
+button:active {
+  background-color: #fff;
 }
 
 #inputButtons {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin-top: 45px;
 }
 
 #inputButtons button{
   width: 190px;
-  height: 50px;
+  height: 100px;
 }
 
 #nextButton {
