@@ -90,7 +90,6 @@ button {
   margin: 5px 15px;
   font-family: 'Crimson Text', serif;
   font-size: 2em;
-  user-select: none;
   background-color: #fff;
   color: #333;
   border: none;
