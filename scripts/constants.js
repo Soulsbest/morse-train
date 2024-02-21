@@ -1,3 +1,5 @@
+import {words} from "./data/wordList.js"
+
 const letter_to_morse = {
   "A" : "•-",
   "B" : "-•••",
@@ -42,7 +44,7 @@ const letters = [
   "T", "U", "V", "W", "X", "Y", "Z"
 ];
 
-//Now to get the list of words
+//List of words used to be here but now is an import 
 
 const sentences = [
   "I have developed one single sentence, however this is not a problem as my sentence is perfet",
