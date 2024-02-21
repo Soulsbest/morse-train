@@ -42,9 +42,7 @@ const letters = [
   "T", "U", "V", "W", "X", "Y", "Z"
 ];
 
-const words = [
-  "Plums", "Banana", "Apple", "Orange", "Pear", "Peach", "Grape", "Kiwi", "Theseareallofthefruitsitautofilled"
-];
+//Now to get the list of words
 
 const sentences = [
   "I have developed one single sentence, however this is not a problem as my sentence is perfet",
