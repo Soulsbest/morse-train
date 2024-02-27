@@ -1,4 +1,4 @@
-import {words} from "./data/wordList.js"
+import {wordList} from "./data/wordList.js"
 
 const letter_to_morse = {
   "A" : "•-",
@@ -44,11 +44,11 @@ const letters = [
   "T", "U", "V", "W", "X", "Y", "Z"
 ];
 
-//List of words used to be here but now is an import 
+words = wordList;
 
 const sentences = [
   "I have developed one single sentence, however this is not a problem as my sentence is perfet",
   "this is my other sentence );"
 ];
 
-export {letter_to_morse, morse_to_letter, toggle_morse, letters, words, sentences};
+export {letter_to_morse, morse_to_letter, toggle_morse, letters, wordList, sentences};

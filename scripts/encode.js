@@ -3,7 +3,7 @@ import { letter_to_morse } from './constants.js'
 
 // This is to setup the webpage
 let guess = ''
-let type = 'word'
+let type = 'letter'
 let currLetters, currMorse = ''
 let wins = 0
 nextProblem(type)
