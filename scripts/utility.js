@@ -1,5 +1,29 @@
 import { letters, words, sentences, letter_to_morse, morse_to_letter } from './constants.js';
 
+function playDot(context, wpm) {
+  playUnits(context, wpmToTimeUnit(wpm)*1)
+}
+
+function playDash(context, wpm) {
+  playUnits(context, wpmToTimeUnit(wpm)*3)
+}
+
+function playUnits(context, units) {
+  const osc = context.createOscillator()
+  osc.type = 'sine'
+  osc.frequency.value = 500
+
+  osc.connect(context.destination)
+  osc.start()
+  osc.stop(context.currenTime + units)
+
+  osc.disconnect()
+}
+
+function wpmToTimeUnit(wpm) {
+  return (60 / (wpm*50))
+}
+
 function chooseRandom(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
 }
@@ -25,4 +49,4 @@ function encode(char) {
   return morse_to_letter[char];
 }
 
-export { newProblem, decode, encode };
+export { newProblem, decode, encode, wpmToTimeUnit, playDot, playDash };

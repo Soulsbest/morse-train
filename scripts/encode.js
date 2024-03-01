@@ -1,7 +1,10 @@
-import { newProblem } from './utility.js'
+import { newProblem, playDot, playDash, wpmToTimeUnit } from './utility.js'
 import { letter_to_morse } from './constants.js'
 
 // This is to setup the webpage
+const wpm = 10
+const audioCtx = new (window.AudioContext || window.webkitAudioContext)()
+
 let guess = ''
 let type = 'letter'
 let currLetters, currMorse = ''
@@ -19,6 +22,11 @@ window.handleNextProblem = handleNextProblem;
 
 function handleInput(input) {
     updateGuess(guess + input);
+  if (input == '-') {
+    playDash(audioCtx, wpm)
+  } else {
+    playDot(audioCtx, wpm)
+  }
 }
 
 window.handleInput = handleInput;
