@@ -15,9 +15,9 @@ function playUnits(context, units) {
 
   osc.connect(context.destination)
   osc.start()
-  osc.stop(context.currentTime + units)
+  osc.stop(context.currentTime + 1)
 
-  osc.disconnect()
+  //osc.disconnect()
 }
 
 function wpmToTimeUnit(wpm) {
