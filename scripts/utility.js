@@ -17,7 +17,7 @@ function playUnits(context, units) {
   osc.start()
   osc.stop(context.currenTime + units)
 
-  osc.disconnect()
+  //osc.disconnect()
 }
 
 function wpmToTimeUnit(wpm) {
