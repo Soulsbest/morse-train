@@ -1,4 +1,4 @@
-import { newProblem, playDot, playDash, wpmToTimeUnit } from './utility.js'
+import { newProblem, wpmToTimeUnit } from './utility.js'
 import { letter_to_morse } from './constants.js'
 
 // This is to setup the webpage
