@@ -1,10 +1,13 @@
-import { newProblem, wpmToTimeUnit } from './utility.js'
+import { newProblem, oscManager } from './utility.js'
 import { letter_to_morse } from './constants.js'
 
-// This is to setup the webpage
+// This is to setup the sound
 const wpm = 10
+const freq = 500
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)()
+oscManager = new oscManager(audioCtx, wpm, freq)
 
+// This sets up the game
 let guess = ''
 let type = 'letter'
 let currLetters, currMorse = ''
@@ -23,9 +26,9 @@ window.handleNextProblem = handleNextProblem;
 function handleInput(input) {
     updateGuess(guess + input);
   if (input == '-') {
-    playDash(audioCtx, wpm)
+    oscManager.playUnits(3)
   } else {
-    playDot(audioCtx, wpm)
+    oscManager.playUnits(1)
   }
 }
 
