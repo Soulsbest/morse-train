@@ -17,7 +17,10 @@ function playUnits(context, units) {
   osc.start()
   osc.stop(context.currentTime + units)
 
-  osc.disconnect()
+  // Disconnect the oscillator after it's done playing
+  osc.onended = function() {
+    osc.disconnect(context.destination)
+  }
 }
 
 function wpmToTimeUnit(wpm) {
