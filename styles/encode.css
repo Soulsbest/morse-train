@@ -46,7 +46,9 @@ html, body {
 }
 
 #popup p, #popup h1 {
-  margin-left: 18px;
+  margin-left: 22px;
+  margin-right: 22px;
+  user-select: text;
 }
 
 #enjoy {
@@ -68,6 +70,7 @@ html, body {
   font-size: 60px;
   color: #333;
   transition: all 0.1s ease;
+  cursor: pointer;
 }
 
 #close:hover {
