@@ -1,10 +1,7 @@
-import { newProblem, playDot, playDash, wpmToTimeUnit } from './utility.js'
+import { newProblem } from './utility.js'
 import { letter_to_morse } from './constants.js'
 
-// This is to setup the webpage
-const wpm = 10
-const audioCtx = new (window.AudioContext || window.webkitAudioContext)()
-
+//Setup website
 let guess = ''
 let type = 'letter'
 let currLetters, currMorse = ''
@@ -12,21 +9,59 @@ let wins = 0
 nextProblem(type)
 updateGuess('')
 
+document.addEventListener('keydown', function(event) {
+    switch (event.key) {
+        case '.':
+            handleInput('•')
+            return;
+        case '/':
+            handleInput('-')
+            return;
+        case ' ':
+            handleClear();
+            return;
+        case 'Enter':
+            handleSkip();
+            return;
+        default:
+            return;
+    }
+})
+
 
 //These are the event handlers
-function handleNextProblem() {
+
+function handlePopupClose(event) {
+    if (event.target == document.getElementById('popupContainer') || event.target == document.getElementById('close')) {
+        document.getElementById('popupContainer').style.display = 'none';
+        document.getElementById('popup').style.display = 'none';
+    }
+}
+
+window.handlePopupClose = handlePopupClose;
+
+function handleOpenPopup() {
+    document.getElementById('popupContainer').style.display = 'flex';
+    document.getElementById('popup').style.display = 'flex';
+}
+
+window.handleOpenPopup = handleOpenPopup;
+
+function handleSkip() {
     nextProblem(type)
 }
 
-window.handleNextProblem = handleNextProblem;
+window.handleSkip = handleSkip;
+
+function handleClear() {
+    updateGuess('')
+}
+
+window.handleClear = handleClear
+
 
 function handleInput(input) {
     updateGuess(guess + input);
-  if (input == '-') {
-    playDash(audioCtx, wpm)
-  } else {
-    playDot(audioCtx, wpm)
-  }
 }
 
 window.handleInput = handleInput;

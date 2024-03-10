@@ -12,12 +12,26 @@
 
 <body>
 
+  <div id="popupContainer" onClick="handlePopupClose(event)">
+    <div id="popup">
+      <span id="close" onclick="handlePopupClose(event)">&times;</span>
+      <h1>Use Keyboard Shortcuts!</h1>
+      <p>Press <strong>•</strong> for dot and <strong>/</strong> for dash.</p>
+
+      <p>Press <strong>Space</strong> to clear and <strong>Enter</strong> to skip a question.</p>
+      <div id="enjoy">
+        <h1>Enjoy!</h1>
+      </div>
+    </div>
+  </div>
+
   <svg id="returnButton" onClick="toTitle()" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 34" width="40"
     height="40" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <path d="M22 32 l-20-15 20-15" />
   </svg>
 
   <p id="winCounter">0</p>
+  <p id="help" onClick="handleOpenPopup()">?</p>
 
   <div id="problemSpace">
 
@@ -33,7 +47,10 @@
         <button onClick="handleInput('-')">-</button>
       </div>
 
-      <button onClick="handleNextProblem()" id="nextButton">Next Problem</button>
+      <div id="metaButtons">
+        <button onClick="handleClear()">Clear</button>
+        <button onClick="handleSkip()">Skip</button>
+      </div>
 
     </div>
 
