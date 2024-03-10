@@ -1,5 +1,24 @@
 import { letters, words, sentences, letter_to_morse, morse_to_letter } from './constants.js';
 
+const EASE_TIME = 0.1;
+
+class oscData {
+
+  constructor(osc, gainNode) {
+    this.osc = osc;
+    this.gainNode = gainNode;
+  }
+
+  getOsc() {
+    return this.osc;
+  }
+
+  getGainNode() {
+    return this.gainNode;
+  }
+
+}
+
 class oscManager {
 
   constructor(audioCtx, wpm, frequency) {
@@ -7,22 +26,36 @@ class oscManager {
     this.wpm = wpm;
     this.timeUnit = wpmToTimeUnit(wpm);
     this.frequency = frequency;
-    /* 
-      letters represent letters
-      • and - represent a dot and dash respectively
-      / represents a space between letters
-      // represents a space between words 
-    */
-    this.queue = [];
 
-    this.osc = ctx.createOscillator();
-    this.osc.connect(ctx.destination);
-    this.osc.type = 'triangle';
+    this.oscListRunning = [];
+    this.oscListStopping = [];
+  }
+
+  newOsc() {
+    let newOsc = this.ctx.createOscillator();
+    let gain = this.ctx.createGain();
+    newOsc.connect(gain);
+    gain.connect(this.ctx.destination);
+    newOsc.type = 'sine';
+    newOsc.frequency.value = this.frequency;
+
+    return new oscData(newOsc, gain);
+  }
+
+  clearOscs() {
+    for (osc of this.oscListRunning) {
+      //maybe change this 0 to a very small number? 1e-6?
+      osc.getGainNode().gain.exponentialRampToValueAtTime(0, this.ctx.currentTime + EASE_TIME);
+      this.oscListStopping.push(osc);
+    }
+    this.oscListRunning = [];
   }
 
   playUnits(units) {
-    this.osc.start();
-    this.osc.stop(this.ctx.currentTime + units * this.timeUnit);
+    let osc = newOsc();
+    osc.getOsc().start();
+    osc.getOsc().stop(this.ctx.currentTime + units * this.timeUnit);
+    this.oscListRunning.push(osc);
   }
 
   setWpm(wpm) {
@@ -33,19 +66,6 @@ class oscManager {
   setTimeUnit(timeUnit) {
     this.timeUnit = timeUnit;
     this.wpm = timeUnitToWpm(timeUnit);
-  }
-
-  clearQueue() {
-    this.queue = [];
-  }
-
-  addToQueue(char) {
-    this.queue.push(char);
-  }
-
-  destroy() {
-    this.osc.stop();
-    this.osc.disconnect();
   }
 }
 

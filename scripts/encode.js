@@ -5,7 +5,7 @@ import { letter_to_morse } from './constants.js'
 const wpm = 10
 const freq = 500
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)()
-oscManager = new oscManager(audioCtx, wpm, freq)
+const oscMan = new oscManager(audioCtx, wpm, freq)
 
 // This sets up the game
 let guess = ''
@@ -24,12 +24,14 @@ function handleNextProblem() {
 window.handleNextProblem = handleNextProblem;
 
 function handleInput(input) {
+
     updateGuess(guess + input);
-  if (input == '-') {
-    oscManager.playUnits(3)
-  } else {
-    oscManager.playUnits(1)
-  }
+
+    if (input == '-') {
+        oscMan.playUnits(3)
+    } else {
+        oscMan.playUnits(1)
+    }
 }
 
 window.handleInput = handleInput;
