@@ -1,6 +1,7 @@
 import { letters, words, sentences, letter_to_morse, morse_to_letter } from './constants.js';
 
-const EASE_TIME = 0.1;
+const EASE_TIME = 1;
+const START_DELAY = 1e-5;
 
 class oscData {
 
@@ -28,7 +29,6 @@ class oscManager {
     this.frequency = frequency;
 
     this.oscListRunning = [];
-    this.oscListStopping = [];
   }
 
   newOsc() {
@@ -43,19 +43,27 @@ class oscManager {
   }
 
   clearOscs() {
-    for (osc of this.oscListRunning) {
-      //maybe change this 0 to a very small number? 1e-6?
-      osc.getGainNode().gain.exponentialRampToValueAtTime(0, this.ctx.currentTime + EASE_TIME);
-      this.oscListStopping.push(osc);
+
+    for (let osc of this.oscListRunning) {
+      osc.getGainNode().gain.exponentialRampToValueAtTime(1e-40, this.ctx.currentTime + EASE_TIME);
     }
     this.oscListRunning = [];
   }
 
   playUnits(units) {
-    let osc = newOsc();
-    osc.getOsc().start();
-    osc.getOsc().stop(this.ctx.currentTime + units * this.timeUnit);
-    this.oscListRunning.push(osc);
+    let osc = this.newOsc();
+
+    let isPlaying = false;
+    if (!(this.oscListRunning.length == 0)) {
+      isPlaying = true;
+    }
+
+    this.clearOscs();
+    if (!(isPlaying)) {
+      osc.getOsc().start(this.ctx.currentTime + START_DELAY);
+      osc.getOsc().stop(this.ctx.currentTime + START_DELAY + units * this.timeUnit);
+      this.oscListRunning.push(osc);
+    }
   }
 
   setWpm(wpm) {
