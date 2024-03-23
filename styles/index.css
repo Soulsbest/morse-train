@@ -20,6 +20,12 @@ h1 {
   transition: all 0.1s ease;
 }
 
+#logo {
+  position: fixed;
+  bottom: 15px;
+  width: 200px;
+}
+
 h1:hover {
   text-decoration:underline;
   text-decoration-thickness: 5px;
