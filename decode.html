@@ -27,24 +27,25 @@
 
     <div id="selectorStuff">
 
-        <svg class="activeSelector" id="miniPlayButton" xmlns="http://www.w3.org/2000/svg" width="40" height="40"
-            viewBox="0 0 24 24" fill="#333" stroke="#333" stroke-width="2" stroke-linecap="round"
+        <svg class="activeSelector, rightwards" id="miniPlayButton" xmlns="http://www.w3.org/2000/svg" width="40"
+            height="40" viewBox="0 0 24 24" fill="#333" stroke="#333" stroke-width="2" stroke-linecap="round"
             stroke-linejoin="round">
             <polygon points="5 3 19 12 5 21 5 3"></polygon>
         </svg>
 
-        <label class="switch">
-            <input id="switchInput" onClick="handleSwitch()" type="checkbox" checked="true">
-            <span class="slider round"></span>
-        </label>
+            <label class="switch">
+                <input id="switchInput" onClick="handleSwitch()" type="checkbox" checked="true">
+                <span class="slider round rightwards"></span>
+            </label>
 
-        <p id="miniMorse" class="inactiveSelector" >•</p>
+
+        <p id="miniMorse" class="inactiveSelector, rightwards">•</p>
 
     </div>
 
     <div id="problemSpace">
         <div id="problem" class="hidden">
-            <h1>-</h1>
+            <h1 id="theproblem">-</h1>
         </div>
         <div id="answerSpace">
             <input type="text" id="answerBox"></input>
