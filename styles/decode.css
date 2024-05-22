@@ -21,15 +21,17 @@ body {
   left: 20px;
   stroke: #333;
   transition: all 0.1s ease;
+  z-index: 100;
 }
 
-#playButton {
-  position: fixed;
-  transition: all 0.2s ease;
+#returnButton:hover {
+  stroke: #e0e0e0;
+  transform: scale(90%);
 }
 
-#problem {
-  transition: all 0.2s ease;
+#returnButton:active {
+  stroke: #333;
+  transform: scale(100%);
 }
 
 .activeSelector {
@@ -42,16 +44,6 @@ body {
   stroke: #e0e0e0;
   fill: #e0e0e0;
   color: #e0e0e0;
-}
-
-#returnButton:hover {
-  stroke: #e0e0e0;
-  transform: scale(90%);
-}
-
-#returnButton:active {
-  stroke: #333;
-  transform: scale(100%);
 }
 
 #winCounter {
@@ -76,6 +68,7 @@ body {
   padding: 0;
   margin: 0;
   transition: 0.5s ease;
+  user-select: none;
 }
 
 .switch {
@@ -137,6 +130,7 @@ input:checked+.slider:before {
 }
 
 #problemSpace {
+  position: fixed;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -146,10 +140,56 @@ input:checked+.slider:before {
   gap: 20px
 }
 
+#textProblem {
+  left: 0;
+  top: 0;
+  font-size: 137px;
+  color: #333;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+
+#playButton {
+  position: absolute;
+  transition: all 0.2s ease;
+  transform: scale(400%)
+}
+
+#playButton:hover {
+  stroke-width: 1.2;
+  transform: scale(350%);
+  stroke: #555;
+}
+
+#playButton:active {
+  stroke-width: 2;
+  transform: scale(400%);
+  stroke: #333;
+}
+
+#problemOptions {
+  width: 100%;
+  height: 15%;
+  position: relative;
+  bottom: 7%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
 #answerSpace {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 15px;
+}
+
+#answerBox {
+  margin: 0;
+  padding: 0;
+  font-size: 6em;
+  color: #444;
+  user-select: none;
 }

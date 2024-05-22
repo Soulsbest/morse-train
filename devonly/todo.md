@@ -1,5 +1,0 @@
-- [ ] Fix text overflow
-- [ ] Decode Page
-- [ ] Morse Train logo on every page
-   - Something for it to lead to
-- [ ] Maybe a database for the words file?
